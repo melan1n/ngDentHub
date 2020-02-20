@@ -27,8 +27,8 @@ export class DentistService {
   }
 
   getById (id: number) {
-    return this.ngFirbase.collection('dentists').
-      doc(id.toString()).
+    return this.ngFirbase.collection<IDentist>('dentists').
+      doc<IDentist>(id.toString()).
       valueChanges();
-      }
+    }
 }

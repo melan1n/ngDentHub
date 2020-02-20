@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
 
-  dentist: any;
+  dentist: IDentist; 
     
   constructor(
     private dentistService: DentistService,
@@ -20,11 +20,13 @@ export class DetailComponent implements OnInit {
         this.dentistService.
         getById(params['id'])
         .subscribe(d => {
-          this.dentist = d
+          this.dentist = d;
         });
       })
+
      }    
 
+     bookAppointmentHandler(){}
   // get selectedDentist() {
   //   return  this.dentistService.selectedDentist;
   // }
