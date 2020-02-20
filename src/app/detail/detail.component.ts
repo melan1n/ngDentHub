@@ -26,10 +26,7 @@ export class DetailComponent implements OnInit {
 
      }    
 
-     bookAppointmentHandler(){
-       //add createAppointment in appointment.service
-       return null;
-     }
+
   // get selectedDentist() {
   //   return  this.dentistService.selectedDentist;
   // }

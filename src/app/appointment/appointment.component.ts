@@ -15,7 +15,6 @@ export class AppointmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.appointmentService.loadAppointments();
-    console.log(this.appointmentService.appointments.toString())
   }
 
 }

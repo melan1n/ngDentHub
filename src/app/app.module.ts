@@ -15,13 +15,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DetailComponent } from './detail/detail.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DentistComponent,
     DetailComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

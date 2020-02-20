@@ -15,7 +15,9 @@ export class AppointmentService {
   loadAppointments() {
     this.ngFirbase.collection<IAppointment>('appointments').valueChanges().subscribe(
       appointments => this.appointments = appointments);
-      console.log(this.appointments);
+  }
 
+  createAppointment(appointment){
+     this.ngFirbase.collection('appointments').add(appointment);
   }
 }

@@ -1,5 +1,5 @@
 export interface IAppointment {
-    dentistId: number;
+    dentist: string;
     email: string;
     time: Date;
     //imageUrl: string;

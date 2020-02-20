@@ -1,5 +1,5 @@
       <div class="col-xs-12">
-        <h1 class="text-center">{{dentist.name}}</h1>
+        <h1 id="thename" class="text-center">{{dentist.name}}</h1>
       </div>
     
     <hr>
@@ -10,20 +10,6 @@
     
     
     <hr>
-
-  <div>Book an appointment!</div>
-  
-  <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-               <input  type="datetime-local" value="2020-02-22T13:00">  
-            </div>
-        </div>
-        
-           </div>
-</div>
-
-        
-        <button type="button" class="btn btn-success" (click)="bookAppointmentHandler()" [routerLink]="['/appointment']">Book an appointment!</button>
-    
+    <app-create [dentist]="dentist"></app-create>
+<!-- 
+    $("#thename").textContent -->
