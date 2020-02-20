@@ -1,10 +1,9 @@
 <div class="row">
     <div class="col-xs-4" *ngIf="dentists">
-          <a *ngFor="let dentist of dentists" (click)="selectDentistHandler(dentist)">
-            <!-- <a *ngFor="let dentist of dentists" routerLink="./dentist/detail/:{{selectedDentist.id}}"> -->
-            <div>
-            {{dentist.name}} {{dentist.clinic}}
-            </div> 
+          <a *ngFor="let dentist of dentists" >
+            <h2> {{dentist.name}} </h2>
+      <p>Clinic: {{ dentist.clinic }}</p>
+      <a [routerLink]="['/detail/', dentist.id]">Book an appointment</a>
         </a>    
     </div>
 </div>

@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { IDentist } from '../shared/interfaces/dentist';
 
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Identifiers } from '@angular/compiler';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +24,11 @@ export class DentistService {
   loadDentists() {
     this.ngFirbase.collection<IDentist>('dentists').valueChanges().subscribe(
       dentists => this.dentists = dentists);
-      console.log(this.dentists);
-    
-    // return this.http.get<IDentist[]>(
-    //   environment.firebase.databaseURL +'/dentists', { headers: {'Access-Control-Allow-Origin': 'denthub-19cfe.firebaseapp.com'} }).subscribe(
-    //   dentists => 
-    //     this.dentists = dentists
-    // );
-    // console.log(this.dentists);
-
   }
+
+  getById (id: number) {
+    return this.ngFirbase.collection('dentists').
+      doc(id.toString()).
+      valueChanges();
+      }
 }
