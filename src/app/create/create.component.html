@@ -1,17 +1,17 @@
-<p>create works!</p>
 <div>Book an appointment!</div>
-  
+
+<form #createForm="ngForm" (ngSubmit)="OnSubmit()">
 <div class="container">
   <div class="row">
       <div class='col-sm-6'>
           <div class="form-group">
             <label for="appoinmentTime">Please select your desired time</label>
-             <input  type="datetime-local" id="appoinmentTime" value="2020-02-22T13:00">  
+             <input #timeInput="ngModel" name="time" id="appoinmentTime" type="datetime-local" value="2020-02-22T13:00" ngModel >  
           </div>
       </div>
    </div>
 </div>
 
       
-<button type="submit" class="btn btn-success"  (click)="bookAppointmentHandler(dentist)" [routerLink]="['/create']">Book an appointment!</button>
-<!--  -->
+<button type="submit" class="btn btn-success"  (click)="bookAppointmentHandler(dentist, createForm.value)" [routerLink]="['/create']">Book an appointment!</button>
+</form>

@@ -1,14 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { AppointmentService } from '../appointment/appointment.service';
 import { IDentist } from '../shared/interfaces/dentist';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent implements OnInit {
 
+export class CreateComponent implements AfterViewInit {
+  @ViewChild('createForm') form: NgForm;
   @Input() dentist: IDentist;
   
   constructor(private appointmentService: AppointmentService) { }
@@ -16,11 +18,17 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  bookAppointmentHandler(dentist: IDentist){
-    //add createAppointment in appointment.service
-    debugger;
+  ngAfterViewInit(){
+    console.log(this.form);
+  }
+
+  OnSubmit(){
+    this.bookAppointmentHandler(this.dentist, this.form.value);
+  }
+
+  bookAppointmentHandler(dentist: IDentist, formValue: FormData){
+    //add email of logged user
     this.appointmentService.createAppointment(
-      
-      {dentist: dentist.name, date: new Date(Date.now())});
+     {dentist: dentist.name, time: new Date(formValue['time'])});
   }
 }
