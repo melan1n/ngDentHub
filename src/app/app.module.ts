@@ -14,12 +14,14 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DetailComponent } from './detail/detail.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DentistComponent,
-    DetailComponent
+    DetailComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,
