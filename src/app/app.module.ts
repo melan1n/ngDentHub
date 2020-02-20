@@ -16,7 +16,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DetailComponent } from './detail/detail.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { CreateComponent } from './create/create.component';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FormsModule} from '@angular/forms';
     DentistComponent,
     DetailComponent,
     AppointmentComponent,
-    CreateComponent
+    CreateComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { FormsModule} from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ DentistService],
   bootstrap: [AppComponent]
