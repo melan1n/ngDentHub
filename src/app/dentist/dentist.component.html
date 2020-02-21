@@ -1,25 +1,19 @@
-<div class="row">
-    <div class="col-xs-4" *ngIf="dentists">
-          <a *ngFor="let dentist of dentists" >
-            <h2> {{dentist.name}} </h2>
-      <p>Clinic: {{ dentist.clinic }}</p>
-      <a [routerLink]="['/detail/', dentist.id]">Book an appointment</a>
-        </a>    
-    </div>
-</div>
+<div *ngIf="dentists" class="container body-content">
 
-
-
-<!-- <div class="media" *ngIf="dentists">
+<div class="media" *ngFor="let dentist of dentists">
   <div class="media-left">
       <a href="#">
-          <img style=" width: 220px; height: 130px" class="media-object img-size" src="">
+          <img style=" width: 220px; height: 130px" class="media-object img-size" src="{{dentist.image}}">
       </a>
   </div>
+ 
   <div class="media-body">
       <h4 class="media-heading">{{dentist.name}}</h4>
-      {{ dentist.clinic }}
+      Clinic: {{ dentist.clinic }}
       <br>
       <a [routerLink]="['/detail/', dentist.id]">Book an appointment</a>
-  </div>
- </div> -->
+    
+    </div>
+ 
+ </div>
+ 

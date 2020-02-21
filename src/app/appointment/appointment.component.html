@@ -1,3 +1,31 @@
-<div *ngFor="let appointment of appointments">
-{{appointment.dentist}}  {{appointment.time.toDate()}}   
+
+<div *ngIf="appointments.length > 0; else elseBlock" class="container body-content">
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"></div>
+
+    <!-- Table -->
+    <table class="table">
+        <tr>
+            <th>Dentist</th>
+            <th>Appointment Time</th>
+        </tr>
+           <tr class=" text-danger" *ngFor="let appointment of appointments">
+                <td>
+                    {{appointment.dentist}} 
+                </td>
+                <td>
+                    {{appointment.time.toDate()}}
+                </td>
+                
+            </tr>
+    </table>
 </div>
+</div>
+<ng-template  #elseBlock>
+<div class="container body-content">
+    <br>
+    <br>
+    <h3>You have no appointments.</h3>
+</div>
+</ng-template>

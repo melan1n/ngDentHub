@@ -62,7 +62,7 @@ export class UserService {
   doLogin(value){
     return this.afAuth.auth.signInWithEmailAndPassword(value.email, value.password)
       .then((userData) => {
-        this.router.navigate([ 'appointment' ]);
+        this.router.navigate([ 'dentist' ]);
         this.currentUserEmail = value.email;
         this._isLogged = true;
         localStorage.setItem('email', userData.user.email);
