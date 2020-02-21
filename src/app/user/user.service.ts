@@ -89,6 +89,7 @@ export class UserService {
     localStorage.removeItem('email');
     this.currentUserEmail = '';
     this._isLogged = false;
-    this.router.navigate(['/dentist']);
+    this.router.navigate(['']);
+    //this.router.navigate(['/dentist']);
   }
 }

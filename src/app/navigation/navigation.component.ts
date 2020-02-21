@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
     return this.userService.currentUserEmail;
   }
 
-  constructor(private userService: UserService) { }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
     this.isLoggedSubscription = this.userService.isLoggedChanged.subscribe((data) => {

@@ -9,12 +9,16 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './shared/guards/auth.guard'
 
 import { UserComponent } from './user/user/user.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './home/home.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '', 
     pathMatch: 'full',
-    component: DentistComponent
+    component: HomeComponent
+    //component: DentistComponent
   }, 
   { path: 'login', 
     component: LoginComponent, 
