@@ -9,6 +9,7 @@ import { AppointmentService } from './appointment.service';
 export class AppointmentComponent implements OnInit {
 
   get appointments() {
+    
     return this.appointmentService.appointments;
   }
   constructor(private appointmentService: AppointmentService) { }

@@ -18,16 +18,17 @@ const routes: Routes = [
   }, 
   { path: 'login', 
     component: LoginComponent, 
-    canActivate: [AuthGuard] 
+    //canActivate: [AuthGuard] 
 },
   { path: 'register', 
     component: RegisterComponent, 
-    canActivate: [AuthGuard] 
+    //If set here the guard redirects to /login
+    //canActivate: [AuthGuard] 
   },
-  // { path: 'user', 
-  //   component: UserComponent,  
-  //   //resolve: { data: UserResolver}
-  // },
+   { path: 'logout', 
+     component: DentistComponent,
+     canActivate: [AuthGuard]  
+   },
   {
   path: 'dentist',
   component: DentistComponent
@@ -40,7 +41,7 @@ const routes: Routes = [
   {
     path: 'appointment',
     component: AppointmentComponent, 
-    canActivate: [AuthGuard] 
+    //canActivate: [AuthGuard] 
   },
   {
     path: 'create',

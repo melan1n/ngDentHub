@@ -13,9 +13,7 @@ export class RegisterComponent implements OnInit {
   errorMessage: string;
   successMessage: string;
 
-  constructor(
-    private userService: UserService
-    ) { 
+  constructor(private userService: UserService) { 
       this.registerForm = new FormGroup({
         email: new FormControl(),
         password: new FormControl()
@@ -27,15 +25,16 @@ export class RegisterComponent implements OnInit {
   }
 
   tryRegister(value){
-    this.userService.doRegister(value)
+    let self = this;
+    self.userService.doRegister(value)
     .then(res => {
       console.log(res);
-      this.errorMessage = "";
-      this.successMessage = "Your account has been created";
+      self.errorMessage = "";
+      self.successMessage = "Your account has been created";
     }, err => {
       console.log(err);
-      this.errorMessage = err.message;
-      this.successMessage = "";
+      self.errorMessage = err.message;
+      self.successMessage = "";
     })
   }
   

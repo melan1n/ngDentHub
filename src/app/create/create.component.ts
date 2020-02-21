@@ -29,6 +29,6 @@ export class CreateComponent implements AfterViewInit {
   bookAppointmentHandler(dentist: IDentist, formValue: FormData){
     //add email of logged user
     this.appointmentService.createAppointment(
-     {dentist: dentist.name, time: new Date(formValue['time'])});
+     {dentist: dentist.name, time: new Date(formValue['time']), email: localStorage.email});
   }
 }
