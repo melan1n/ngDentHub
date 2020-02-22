@@ -19,7 +19,6 @@
     <label>Password</label>
     <input #passwordInput="ngModel" ngModel name="password" type="password" class="form-control" placeholder="Password" minlength="6" required>
     <div class="error" *ngIf="passwordInput.invalid && passwordInput.touched">Please enter a password</div>
-   <!-- <div class="error" *ngIf="passwordInput.errors.minlength.actualLength !== 5 && passwordInput.touched">Password should be at least 6 chracters!</div> -->
    <label class="error">{{errorMessage}}</label>
    <label class="success">{{successMessage}}</label>
    
