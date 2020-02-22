@@ -12,6 +12,9 @@ import { NgForm } from '@angular/forms';
 export class CreateComponent implements AfterViewInit {
   @ViewChild('createForm') form: NgForm;
   @Input() dentist: IDentist;
+
+  dateRegex= /^([0]{0,1}[1-9]|1[012])-([1-9]|([012][0-9])|(3[01]))-\d\d\d\d (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)$/g;
+
   
   constructor(private appointmentService: AppointmentService) { }
 
@@ -27,7 +30,6 @@ export class CreateComponent implements AfterViewInit {
   }
 
   bookAppointmentHandler(dentist: IDentist, formValue: FormData){
-    //add email of logged user
     this.appointmentService.createAppointment(
      {dentist: dentist.name, time: new Date(formValue['time']), email: localStorage.email});
   }

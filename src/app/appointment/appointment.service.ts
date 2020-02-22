@@ -17,10 +17,7 @@ export class AppointmentService {
     ) { }
 
   loadAppointments() {
-    // this.ngFirbase.collection<IAppointment>('appointments').
-    //   valueChanges().subscribe(
-    //   appointments => this.appointments = appointments);
-    this.ngFirbase.collection<IAppointment>('appointments', a => a.where('email', '==', localStorage.email ))
+    this.ngFirbase.collection<IAppointment>('appointments', a => a.where('email', '==', localStorage.email ).orderBy('time'))
       .valueChanges().subscribe(
       appointments => this.appointments = appointments);
   }
