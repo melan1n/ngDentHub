@@ -15,7 +15,7 @@
                     {{appointment.dentist}} 
                 </td>
                 <td>
-                    {{appointment.time.toDate()}}
+                    {{appointment.time.toDate() | date: 'dd.MM.yyyy hh:mm:SS'}}
                 </td>
                 
             </tr>
