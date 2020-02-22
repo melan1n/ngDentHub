@@ -19,7 +19,6 @@ const routes: Routes = [
     path: '', 
     pathMatch: 'full',
     component: HomeComponent
-    //component: DentistComponent
   }, 
   { path: 'login', 
     component: LoginComponent, 
@@ -33,7 +32,8 @@ const routes: Routes = [
    },
   {
   path: 'dentist',
-  component: DentistComponent
+  component: DentistComponent,
+  canActivate: [AuthGuard]
   },
   {
     path: 'detail/:id',
@@ -43,7 +43,7 @@ const routes: Routes = [
   {
     path: 'appointment',
     component: AppointmentComponent, 
-    //canActivate: [AuthGuard] 
+    canActivate: [AuthGuard] 
   },
   {
     path: 'create',
