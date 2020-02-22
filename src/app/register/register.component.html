@@ -22,8 +22,9 @@
     <label class="error">{{errorMessage}}</label>
    <label class="success">{{successMessage}}</label>
   <!-- </div> -->
-  
+  <div>
   <button [disabled]="registerForm.invalid" type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-primary bg-dark">Register</button>
+</div>
 </form>
 <!-- *** -->
 </div>

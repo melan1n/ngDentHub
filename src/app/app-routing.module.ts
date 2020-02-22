@@ -12,6 +12,7 @@ import { UserComponent } from './user/user/user.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -22,12 +23,9 @@ const routes: Routes = [
   }, 
   { path: 'login', 
     component: LoginComponent, 
-    //canActivate: [AuthGuard] 
-},
+  },
   { path: 'register', 
     component: RegisterComponent, 
-    //If set here the guard redirects to /login
-    //canActivate: [AuthGuard] 
   },
    { path: 'logout', 
      component: DentistComponent,
@@ -51,7 +49,11 @@ const routes: Routes = [
     path: 'create',
     component: CreateComponent,
     canActivate: [AuthGuard] 
+  },
+  { path: '**', 
+  component: PageNotFoundComponent 
   }
+
 ];
 
 @NgModule({
