@@ -26,20 +26,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // tryLogin(value){
-  //   this.userService.doLogin(value)
-  //   .then(res => {
-  //     debugger;
-  //     console.log(res);
-  //     this.errorMessage = "";
-  //     this.successMessage = "You have been logged in";
-  //   }, err => {
-  //     console.log(err);
-  //     this.errorMessage = err.message;
-  //     this.successMessage = "";
-  //   })
-  // }
-
   tryLogin(value){
     this.userService.doLogin(value)
     .then(() => this.errorMessage = "Please input valid credentials.");

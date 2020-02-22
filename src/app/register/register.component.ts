@@ -24,19 +24,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // tryRegister(value){
-  //   let self = this;
-  //   self.userService.doRegister(value)
-  //   .then(res => {
-  //     console.log(res);
-  //     self.errorMessage = "";
-  //     self.successMessage = "Your account has been created";
-  //   }, err => {
-  //     console.log(err);
-  //     self.errorMessage = err.message;
-  //     self.successMessage = "";
-  //   })
-
   tryRegister(value){
     let self = this;
     self.userService.doRegister(value)
